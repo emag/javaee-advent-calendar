@@ -1,0 +1,48 @@
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*.sass-cache
+
+# OS or Editor folders
+*.iml
+.idea
+.DS_Store
+.cache
+.project
+.settings
+.classpath
+.tmproj
+nbproject
+Thumbs.db
+
+# Maven output folder
+target
+
+# Java
+hsperfdata_*
+
+# Gradle
+.gradle
+build
+gradle-app.setting
+out
+
+# JRebel
+rebel.xml
+
+# Docker
+.env
+
+# WildFly Swarm
+overlays
+
+# h2
+*.db
+
