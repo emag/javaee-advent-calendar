@@ -11,30 +11,30 @@ import java.time.LocalDateTime;
 public class HealthCheckResource {
 
   @GET
-  @Path("/unstable")
+  @Path("/something")
   @Health
-  public HealthStatus checkDiskspace() {
-
-    return (Math.random() < 0.5) ?
-      HealthStatus
-        .named("random")
-        .up()
-        .withAttribute("message", "Woo Hoo!") :
-      HealthStatus
-        .named("random")
-        .down()
-        .withAttribute("message", "Too Bad...");
-  }
-
-  @GET
-  @Path("/second-health")
-  @Health
-  public HealthStatus checkSomethingElse() {
+  public HealthStatus checkSomething() {
     return HealthStatus
-      .named("something-else")
+      .named("something")
       .up()
       .withAttribute("date", LocalDateTime.now().toString())
       .withAttribute("time", System.currentTimeMillis());
+  }
+
+  @GET
+  @Path("/unstable")
+  @Health
+  public HealthStatus unstable() {
+
+    return (Math.random() < 0.5) ?
+      HealthStatus
+        .named("unstable")
+        .up()
+        .withAttribute("message", "Woo Hoo!") :
+      HealthStatus
+        .named("unstable")
+        .down()
+        .withAttribute("message", "Too Bad...");
   }
 
 }
