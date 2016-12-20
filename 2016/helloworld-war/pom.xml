@@ -43,7 +43,7 @@
   </dependencies>
 
   <build>
-    <finalName>${project.artifactId}</finalName>
+    <finalName>helloworld</finalName>
 
     <plugins>
       <plugin>
