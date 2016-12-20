@@ -8,14 +8,14 @@ import org.wildfly.swarm.jaxrs.btm.ZipkinFraction;
 public class Bootstrap {
 
   public static void main(String[] args) throws Exception {
-    Swarm container = new Swarm(args);
+    Swarm swarm = new Swarm(args);
 
-    container.fraction(new ZipkinFraction("third")
+    swarm.fraction(new ZipkinFraction("third")
       .reportAsync("http://localhost:9411/api/v1/spans"));
 
     JAXRSArchive archive = ShrinkWrap.create(JAXRSArchive.class);
     archive.addPackage("zipkin");
 
-    container.start().deploy(archive);
+    swarm.start().deploy(archive);
   }
 }
