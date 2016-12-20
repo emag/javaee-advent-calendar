@@ -11,8 +11,7 @@ public class Bootstrap {
     Swarm container = new Swarm(args);
 
     container.fraction(new ZipkinFraction("third")
-      .reportAsync("http://localhost:9411/api/v1/spans")
-      .sampleRate(1.0f));
+      .reportAsync("http://localhost:9411/api/v1/spans"));
 
     JAXRSArchive archive = ShrinkWrap.create(JAXRSArchive.class);
     archive.addPackage("zipkin");
